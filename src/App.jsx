@@ -7,7 +7,7 @@ function App() {
       <section>
 
         <div>
-          <h1>Hello</h1>
+          <h1>Hero-IO</h1>
         </div>
 
       </section>
