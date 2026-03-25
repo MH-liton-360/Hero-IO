@@ -7,8 +7,8 @@ const Navbar = () => {
 
     const menuItems = [
         { name: "Home", to: "hello" },
-        { name: "Support", to: "hello" },
-        { name: "Actionable", to: "hello" },
+        { name: "Apps", to: "apps" },
+        { name: "Installation", to: "installation" },
     ]
 
     const renderNavItems = (isMobile = false) => {
