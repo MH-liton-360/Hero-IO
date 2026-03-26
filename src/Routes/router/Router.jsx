@@ -8,14 +8,13 @@ const Router = createBrowserRouter([
         path: "/",
         Component: Main,
         children: [
-            { index: true, Component: Home },
-            {
-                path: "*",
-                Component: Error
-            }
+            { index: true, Component: Home }
         ]
     },
-
+    {
+        path: "*",
+        Component: Error
+    }
 ])
 
 export default Router;
