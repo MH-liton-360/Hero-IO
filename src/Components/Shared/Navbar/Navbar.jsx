@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router";
 import { Link as ScrollLink } from "react-scroll"
+
+import logoHIO from "../../../assets/logo.png"
+import { FaGithub } from "react-icons/fa";
+
 
 const Navbar = () => {
     const [activeMenu, setActiveMenu] = useState("home");
 
     const menuItems = [
-        { name: "Home", to: "hello" },
+        { name: "Home", to: "home" },
         { name: "Apps", to: "apps" },
         { name: "Installation", to: "installation" },
     ]
@@ -21,6 +24,7 @@ const Navbar = () => {
                     spy={true}
                     offset={-70}
                     onSetActive={() => setActiveMenu(item.to)}
+                    onClick={() => setActiveMenu(item.to)}
                     className={`cursor-pointer px-4 py-2 block rounded-lg transition ${activeMenu === item.to
                         ? "bg-yellow-400 text-black font-semibold"
                         : "text-black hover:text-yellow-500"
@@ -34,7 +38,7 @@ const Navbar = () => {
 
     return (
         <section>
-            <div className="navbar bg-base-100 shadow-sm">
+            <div className="fixed navbar bg-base-100 shadow-sm">
                 <div className="max-w-7xl mx-auto flex flex-1 items-center justify-between px-4 h-16">
 
                     {/* Mobile Menu */}
@@ -51,12 +55,18 @@ const Navbar = () => {
 
                     {/* Logo */}
                     <div className="flex-1 flex justify-center lg:justify-start">
-                        <Link to="/" className="flex items-center gap-2">
-                            {/* <img src={logoMat} className="h-10 w-10" /> */}
+                        <ScrollLink
+                            to="home"
+                            smooth={true}
+                            duration={500}
+                            onClick={() => setActiveMenu("home")}
+                            className="flex items-center gap-2 cursor-pointer"
+                        >
+                            <img src={logoHIO} className="h-10 w-10" />
                             <span className="text-xl font-bold text-black hover:text-yellow-500">
                                 Hero-IO
                             </span>
-                        </Link>
+                        </ScrollLink>
                     </div>
 
                     {/* desktop  */}
@@ -65,7 +75,15 @@ const Navbar = () => {
                     </ul>
 
                     <div className="flex-1 flex navbar-end">
-                        <a className="btn">Contribute</a>
+                        <a
+                            href="https://github.com/your-repo"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn flex items-center gap-2"
+                        >
+                            <FaGithub className="text-lg" />
+                            <span className="text-sm font-medium">Contribute</span>
+                        </a>
                     </div>
                 </div>
 
