@@ -65,7 +65,7 @@ const Navbar = () => {
                     </ul>
 
                     <div className="flex-1 flex navbar-end">
-                        <a className="btn">Button</a>
+                        <a className="btn">Contribute</a>
                     </div>
                 </div>
 
