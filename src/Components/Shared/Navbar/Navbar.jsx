@@ -1,37 +1,31 @@
-import { useState } from "react";
-import { Link as ScrollLink } from "react-scroll"
 
 import logoHIO from "../../../assets/logo.png"
 import { FaGithub } from "react-icons/fa";
+import { Link, useLocation } from "react-router";
 
 
 const Navbar = () => {
-    const [activeMenu, setActiveMenu] = useState("home");
+    const location = useLocation();
+    const currentPath = location.pathname;
 
     const menuItems = [
-        { name: "Home", to: "home" },
-        { name: "Apps", to: "apps" },
-        { name: "Installation", to: "installation" },
+        { name: "Home", to: "/" },
+        { name: "Apps", to: "/apps" },
+        { name: "Installation", to: "/installation" },
     ]
 
     const renderNavItems = (isMobile = false) => {
         return menuItems.map((item) => (
             <li key={item.to}>
-                <ScrollLink
+                <Link
                     to={item.to}
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    offset={-70}
-                    onSetActive={() => setActiveMenu(item.to)}
-                    onClick={() => setActiveMenu(item.to)}
-                    className={`cursor-pointer px-4 py-2 block rounded-lg transition ${activeMenu === item.to
+                    className={`cursor-pointer px-4 py-2 block rounded-lg transition ${currentPath === item.to
                         ? "bg-yellow-400 text-black font-semibold"
                         : "text-black hover:text-yellow-500"
                         } ${isMobile ? "w-full text-center" : ""}`}
                 >
                     {item.name}
-                </ScrollLink>
+                </Link>
             </li>
         ));
     };
@@ -55,18 +49,12 @@ const Navbar = () => {
 
                     {/* Logo */}
                     <div className="flex-1 flex justify-center lg:justify-start">
-                        <ScrollLink
-                            to="home"
-                            smooth={true}
-                            duration={500}
-                            onClick={() => setActiveMenu("home")}
-                            className="flex items-center gap-2 cursor-pointer"
-                        >
-                            <img src={logoHIO} className="h-10 w-10" />
+                        <Link to="/" className="flex items-center gap-2">
+                            <img src={logoHIO} className="h-8 w-8" />
                             <span className="text-xl font-bold text-black hover:text-yellow-500">
                                 Hero-IO
                             </span>
-                        </ScrollLink>
+                        </Link>
                     </div>
 
                     {/* desktop  */}
@@ -79,7 +67,7 @@ const Navbar = () => {
                             href="https://github.com/your-repo"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn flex items-center gap-2"
+                            className="btn flex items-center gap-2 rounded-lg bg-blue-600 text-white"
                         >
                             <FaGithub className="text-lg" />
                             <span className="text-sm font-medium">Contribute</span>
