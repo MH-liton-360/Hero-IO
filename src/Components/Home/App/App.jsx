@@ -1,10 +1,14 @@
 import { FaDownload, FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const App = ({ app }) => {
-    const { image, title, downloads, ratingAvg } = app;
+    const { image, title, downloads, ratingAvg, id } = app;
+    const navigate = useNavigate();
     return (
         <section>
-            <div className="card bg-amber-100 shadow-lg">
+            <div onClick={() => navigate(`/app/${id}`)}
+                className="card bg-amber-100 shadow-lg cursor-pointer hover:scale-105 transition"
+            >
                 <figure className="px-10 pt-10">
                     <img
                         src={image}
