@@ -36,7 +36,7 @@ const Installation = () => {
                                 <div className="flex gap-4 text-sm text-gray-600 mt-1">
                                     <span>📥 {app.downloads}</span>
                                     <span>⭐ {app.ratingAvg}</span>
-                                    <span>📦 {app.size} MB</span>
+                                    <span>{app.size} MB</span>
                                 </div>
                             </div>
                         </div>
