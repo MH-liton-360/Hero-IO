@@ -6,6 +6,7 @@ const App = ({ app }) => {
     const navigate = useNavigate();
     return (
         <section>
+
             <div onClick={() => navigate(`/app/${id}`)}
                 className="card bg-amber-100 shadow-lg cursor-pointer hover:scale-105 transition"
             >

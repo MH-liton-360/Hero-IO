@@ -83,7 +83,7 @@ const AppDetails = () => {
 
             {/* Description */}
             <div className="mt-8">
-                <h3>Description</h3>
+                <h3 className="font-semibold">Description</h3>
                 <p className="text-gray-600 whitespace-pre-line">{description}</p>
             </div>
         </div>

@@ -10,6 +10,7 @@ const Apps = ({ appsPromise, limit }) => {
 
     return (
         <section>
+            <h1 className="pl-8 mb-2 font-bold">({appData.length}): Apps found</h1>
             <div className="max-w-7xl mx-auto grid grid-cols-4 gap-4">
                 {appsToDisplay.map(app => <App key={app.id} app={app} />)}
             </div>
