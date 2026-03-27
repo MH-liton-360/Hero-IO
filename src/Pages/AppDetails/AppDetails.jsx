@@ -1,5 +1,8 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
+import { FaDownload, FaStar } from "react-icons/fa";
+
+import iconDownloads from "../../assets/icon-downloads.png"
 
 const AppDetails = () => {
     const { id } = useParams();
@@ -68,17 +71,17 @@ const AppDetails = () => {
                     {/* Stats */}
                     <div className="flex justify-between gap-6 text-gray-700">
                         <div className="flex flex-col items-center">
-                            <span className="text-2xl">📥</span>
+                            <span className="text-xl"><FaDownload className="text-blue-500"></FaDownload></span>
                             <span className="text-sm">Downloads</span>
                             <span className="text-sm">{downloads}</span>
                         </div>
                         <div className="flex flex-col items-center">
-                            <span className="text-2xl">⭐</span>
+                            <span className="text-xl"> <FaStar className="text-yellow-400"></FaStar> </span>
                             <span className="text-sm">Avg Rating</span>
                             <span className="text-sm">{ratingAvg}</span>
                         </div>
                         <div className="flex flex-col items-center">
-                            <span className="text-2xl">💬</span>
+                            <span className="text-xl">💬</span>
                             <span className="text-sm">Reviews</span>
                             <span className="text-sm">{reviews}</span>
                         </div>
@@ -87,9 +90,10 @@ const AppDetails = () => {
                     {/* Install Button */}
                     <button
                         onClick={handleInstall}
-                        className="mt-4 bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600"
+                        className="flex items-center justify-center gap-2 mt-4 bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600"
                     >
-                        Install Now ({size} MB)
+                        <img src={iconDownloads} alt="Download Icon" className="h-6 w-6" />
+                        <span>Install Now ({size} MB)</span>
                     </button>
                 </div>
             </div>
