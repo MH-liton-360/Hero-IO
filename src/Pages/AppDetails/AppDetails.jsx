@@ -22,30 +22,18 @@ const AppDetails = () => {
         return <span className="loading loading-bars loading-xl"></span>;
     }
 
-    const {
-        image,
-        title,
-        companyName,
-        description,
-        reviews,
-        ratingAvg,
-        downloads,
-        ratings,
-        size,
-    } = app;
+    const { image, title, companyName, description, reviews, ratingAvg, downloads, ratings, size, } = app;
 
     const handleInstall = () => {
         // Get installed apps from localStorage
         const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
 
-        // Prevent duplicate installation
         const isAlreadyInstalled = installedApps.find((a) => a.id === app.id);
         if (!isAlreadyInstalled) {
             installedApps.push(app);
             localStorage.setItem("installedApps", JSON.stringify(installedApps));
         }
 
-        // Navigate to Installation page
         navigate("/installation");
     };
 
