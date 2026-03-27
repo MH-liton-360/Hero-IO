@@ -4,8 +4,8 @@ const Hero = () => {
     return (
         <section className="bg-yellow-100 pt-24">
             <div className="text-center items-center">
-                <h3 className="text-5xl font-bold text-black p-8">We Build <br /> <span className="text-blue-600">Productive</span> Apps</h3>
-                <p className="text-black max-w-2xl mx-auto pb-3">At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
+                <h3 className="text-5xl font-bold text-black pt-8">We Build <br /> <span className="text-blue-600">Productive</span> Apps</h3>
+                <p className="text-black max-w-2xl mx-auto p-4">At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
 
                 <div className="flex justify-center gap-3">
 

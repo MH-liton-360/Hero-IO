@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const menuItems = [
         { name: "Home", to: "/" },
-        { name: "Apps", to: "/apps" },
+        { name: "Apps", to: "/all-apps" },
         { name: "Installation", to: "/installation" },
     ]
 
@@ -32,7 +32,7 @@ const Navbar = () => {
 
     return (
         <section>
-            <div className="fixed navbar bg-base-100 shadow-sm">
+            <div className="fixed navbar bg-base-100 shadow-sm z-50">
                 <div className="max-w-7xl mx-auto flex flex-1 items-center justify-between px-4 h-16">
 
                     {/* Mobile Menu */}

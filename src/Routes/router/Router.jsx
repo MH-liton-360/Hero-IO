@@ -11,7 +11,7 @@ const Router = createBrowserRouter([
         Component: Main,
         children: [
             { index: true, Component: Home },
-            { path: "apps", Component: Apps },
+            { path: "all-apps", Component: Apps },
             { path: "installation", Component: Installation },
         ]
     },

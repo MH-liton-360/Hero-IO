@@ -1,14 +1,16 @@
-import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import { Suspense } from "react";
+import Apps from "../Apps/Apps";
 
 const TrendingApps = () => {
+
+    const appsPromise = fetch('./apps.json').then(res => res.json())
     return (
         <section>
-            <SectionTitle
-                heading={"Trending Apps"}
-                subHeading={"Explore All Trending Apps on the Market developed by us"}
-            ></SectionTitle>
+
             <div className="">
-                <h1>Hello</h1>
+                <Suspense fallback={<span className="loading loading-bars loading-xl"></span>} >
+                    <Apps appsPromise={appsPromise} ></Apps>
+                </Suspense>
             </div>
         </section>
     );
